@@ -1,0 +1,58 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --oc-bg: #f8f9fa;
+  --oc-surface: #ffffff;
+  --oc-surface-alt: #f1f5f9;
+  --oc-text: #0f172a;
+  --oc-muted: #475569;
+  --oc-border: #e2e8f0;
+  --oc-accent: #0f766e;
+  --oc-accent-fg: #ffffff;
+  --oc-accent-soft: rgba(15, 118, 110, 0.1);
+}
+
+html,
+body {
+  background-color: var(--oc-bg);
+  color: var(--oc-text);
+  font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+.font-display {
+  font-family: "Bricolage Grotesque", "Plus Jakarta Sans", system-ui, sans-serif;
+}
+
+.font-mono-num {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+.oc-pattern-dots {
+  background-image: radial-gradient(var(--oc-border) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+.oc-pattern-grid {
+  background-image:
+    linear-gradient(to right, var(--oc-border) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--oc-border) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.oc-pattern-warm-glow {
+  background-image: radial-gradient(circle at 18% 12%, var(--oc-accent-soft), transparent 46%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
